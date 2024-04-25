@@ -1,0 +1,37 @@
+services:
+  app-1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    command: gunicorn dc_project.wsgi --bind 0.0.0.0:8000
+    networks:
+      - mynet
+  app-2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9000:9000"
+    command: gunicorn dc_project.wsgi --bind 0.0.0.0:9000
+  app-3:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9001:9001"
+    command: gunicorn dc_project.wsgi --bind 0.0.0.0:9001
+  nginx:
+    ports:
+      - "80:80"
+    build:
+      context: .
+      dockerfile: ./nginx/Dockerfile
+    depends_on:
+      - app-1
+    networks:
+      - mynet
+
+networks:
+  mynet:
