@@ -1,6 +1,16 @@
-# BookMyShow Project
+# Distributed System Project : Movie Booking App
 
 This project is a ticket booking system where users can book tickets for movies. The application fetches movie, theater, and show information from an external API and stores it in a MySQL database. It utilizes Python, Django, Docker, JavaScript, HTML, CSS, and MySQL for implementation.
+
+## Aim
+
+- **Client Server Communication**: Implemented using RPC and Socket programming
+- **Multi Threading**: Implemented Multi-threading by using thread pool executer. Celery to integrate with multi-threading for task scheduling and execution.
+- **Clock Synchronization**: Implemented clock sychronization using lamport's clock
+- **Data Consistency**: Implemented semaphores, mutex locks for consistency
+- **Data Replication**: Designed Master slave architecture for replication purpose across multiple containers.
+- **Election Algorithm**: Used Bully Algorithm for the election process of the master.
+- **Load Balancing**: Used Nginx and Docker for load balancing & deployment
 
 ## Features
 
